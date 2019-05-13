@@ -15,10 +15,14 @@
       repeat="1000 1000"
       shadow="receive: true"
     ></a-plane>
-    <!-- Camera
-    <a-entity position="0 0 3">
-      <a-camera></a-camera>
-    </a-entity> -->
+    <!-- Camera -->
+    <a-camera>
+      <a-entity cursor position="0 0 -1"
+      geometry="primitive: sphere; radius: 0.005"
+      material="color: #000000; shader: flat; opacity: 0.5">
+
+      </a-entity>
+    </a-camera>
 
     <!-- Yellow Box -->
     <a-box
