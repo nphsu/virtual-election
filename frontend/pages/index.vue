@@ -17,11 +17,12 @@
     ></a-plane>
     <!-- Camera -->
     <a-camera>
-      <a-entity cursor position="0 0 -1"
-      geometry="primitive: sphere; radius: 0.005"
-      material="color: #000000; shader: flat; opacity: 0.5">
-
-      </a-entity>
+      <a-entity
+        cursor
+        position="0 0 -1"
+        geometry="primitive: sphere; radius: 0.005"
+        material="color: #000000; shader: flat; opacity: 0.5"
+      ></a-entity>
     </a-camera>
 
     <!-- Yellow Box -->
@@ -31,6 +32,9 @@
       position="-1 1 0"
       animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
       shadow="cast: true"
+      event-set__mouseenter="material.color: #FF0000"
+      event-set__mouseleave="material.color: #FFEB3B"
+      event-set__click="material.color: #FFFFFF; _delay: 500"
     ></a-box>
 
     <!-- Orange Box -->
@@ -61,6 +65,7 @@
 
 <script>
 import 'aframe'
+import 'aframe-event-set-component'
 import FloorImg from '~/assets/img/floor-1024.jpg'
 // import FireFoxImg from '~/assets/img/firefox.png'
 
