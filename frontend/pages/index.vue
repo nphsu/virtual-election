@@ -15,7 +15,10 @@
       repeat="1000 1000"
       shadow="receive: true"
     ></a-plane>
-    <!-- Camera -->
+    <!-- Camera
+    <a-entity position="0 0 3">
+      <a-camera></a-camera>
+    </a-entity> -->
 
     <!-- Yellow Box -->
     <a-box
@@ -23,16 +26,32 @@
       scale="0.5 0.5 0.5"
       position="-1 1 0"
       animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+      shadow="cast: true"
     ></a-box>
 
     <!-- Orange Box -->
     <a-box
-      id="orage-box"
+      id="orange-box"
       color="#FF5722"
       scale="0.5 0.5 0.5"
       position="1 1 0"
       animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing:linear"
+      animation__2="property: position; to: 1 1 -2; loop: true; dir: alternate; dur: 5000"
+      shadow="cast: true"
     ></a-box>
+
+    <!-- Customn Light | Ambient -->
+    <a-entity light="type: ambient; intensity: 0.2"></a-entity>
+    <!-- Customn Light | Point -->
+    <a-entity
+      light="type: point; intensity: 0.8; distance: 10; castShadow: true"
+      position="0 2 1.5"
+    ></a-entity>
+    <!-- Customn Light | Spot -->
+    <a-entity
+      light="type: spot; target: #orange-box; color: #2E2EFE; angle: 30; penumbra: 0.1; castShadow: true"
+      position="0 3 1"
+    ></a-entity>
   </a-scene>
 </template>
 
